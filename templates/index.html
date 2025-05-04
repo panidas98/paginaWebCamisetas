@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Inicio - Toro Tattoo Art{% endblock %}
+{% block content %}
+<div class="banner-izquierda">
+    <img src="{{ url_for('static', filename='img/banner.png') }}" alt="Banner" style="width: 220px; height: auto;">
+</div>
+<section class="inicio">
+    <h1>Bienvenido a Toro Tattoo Art</h1>
+    <p>Descubre nuestra colección exclusiva de camisetas para hombre y mujer. Calidad, estilo y comodidad en un solo lugar.</p>
+    <div class="inicio-links">
+        <a href="{{ url_for('hombre') }}" class="btn">Ver Camisetas de Hombre</a>
+        <a href="{{ url_for('mujer') }}" class="btn">Ver Camisetas de Mujer</a>
+    </div>
+</section>
+{% endblock %}

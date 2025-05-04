@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Mujer{% endblock %}
+{% block content %}
+<h2>Mujer</h2>
+<div class="productos">
+    {% for producto in productos %}
+    <div class="producto-card">
+        <img src="{{ url_for('static', filename=producto.imagen) }}" alt="{{ producto.nombre }}">
+        <h3>{{ producto.nombre }}</h3>
+        <p class="precio">${{ "%.2f"|format(producto.precio) }}</p>
+        <form>
+            <label for="talla-{{ loop.index }}">Talla:</label>
+            <select id="talla-{{ loop.index }}" name="talla">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+            </select>
+            <button type="button" class="btn">Añadir al carrito</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
